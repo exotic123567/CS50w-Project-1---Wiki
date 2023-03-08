@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <h1>These were what we could find for {{ searchTitle }}.</h1>
+    <ul>
+        {% for entry in searchList %}
+            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+        {% if lenList == 0 %}
+            <p>Nothing matches the search query. Try something else or <a href="{% url 'new' %}">Create a New page.</a></p>
+        {% endif %}
+    </ul>
+{% endblock %}

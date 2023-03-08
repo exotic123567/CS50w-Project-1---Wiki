@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Already Exists!
+{% endblock %}
+
+{% block body %}
+    <h1>{{ newtitle }} already exists!</h1>
+
+    <ul><a href="{% url 'newtitle' title=entry %}">{{ newtitle }}</a></ul>
+
+{% endblock %}
